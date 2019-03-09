@@ -2,8 +2,8 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
 use Laravel\Scout\Searchable;
+use Illuminate\Database\Eloquent\Model;
 use RuthgerIdema\UrlRewrite\Facades\UrlRewrite;
 use RuthgerIdema\UrlRewrite\Traits\HasUrlRewrite;
 
@@ -20,7 +20,7 @@ class Category extends Model
         $urlRewrite = UrlRewrite::getByRequestPath(request()->path());
 
         if (! $urlRewrite) {
-            $urlRewrite = UrlRewrite::getByTargetPath('/' . request()->path());
+            $urlRewrite = UrlRewrite::getByTargetPath('/'.request()->path());
         }
 
         return $urlRewrite->target_path;
@@ -38,6 +38,6 @@ class Category extends Model
 
     public function searchableAs()
     {
-        return 'categories_index_' . env('MIX_ALGOLIA_APPEND', 'default');
+        return 'categories_index_'.env('MIX_ALGOLIA_APPEND', 'default');
     }
 }
