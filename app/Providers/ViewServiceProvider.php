@@ -2,10 +2,10 @@
 
 namespace App\Providers;
 
-use App\Http\View\Composers\HeaderComposer;
-use App\Http\View\Composers\NewProductsComposer;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
+use App\Http\View\Composers\HeaderComposer;
+use App\Http\View\Composers\NewProductsComposer;
 
 class ViewServiceProvider extends ServiceProvider
 {

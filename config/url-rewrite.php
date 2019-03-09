@@ -15,7 +15,7 @@ return [
         'category' => [
             'route' => 'category',
             'attributes' => ['id'],
-            'create-slug-from' => 'name'
-        ]
+            'create-slug-from' => 'name',
+        ],
     ],
 ];
