@@ -1449,12 +1449,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ruthgeridema/laravel-url-rewrites.git",
-                "reference": "bb4b084a06cf6bfded28fca2cf28904969f884da"
+                "reference": "1a4e022c788feccb89d76e1f24dd657fff296434"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ruthgeridema/laravel-url-rewrites/zipball/bb4b084a06cf6bfded28fca2cf28904969f884da",
-                "reference": "bb4b084a06cf6bfded28fca2cf28904969f884da",
+                "url": "https://api.github.com/repos/ruthgeridema/laravel-url-rewrites/zipball/1a4e022c788feccb89d76e1f24dd657fff296434",
+                "reference": "1a4e022c788feccb89d76e1f24dd657fff296434",
                 "shasum": ""
             },
             "require": {
@@ -1496,7 +1496,7 @@
                 "rewrite",
                 "url"
             ],
-            "time": "2019-03-09T13:30:15+00:00"
+            "time": "2019-03-09T14:10:52+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",

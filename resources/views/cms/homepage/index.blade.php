@@ -1,4 +1,5 @@
 @extends('layout')
+@section('pageTitle', 'Homepage')
 @section('content')
     <div class="container">
         <div class="row">

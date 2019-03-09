@@ -17,7 +17,13 @@ class Product extends Model
 
     public function getOriginalUrlAttribute()
     {
-        return UrlRewrite::getByRequestPath(request()->path())->target_path;
+        $urlRewrite = UrlRewrite::getByRequestPath(request()->path());
+
+        if (! $urlRewrite) {
+            $urlRewrite = UrlRewrite::getByTargetPath('/' . request()->path());
+        }
+
+        return $urlRewrite->target_path;
     }
 
     public function categories(): \Illuminate\Database\Eloquent\Relations\BelongsToMany

@@ -1,4 +1,6 @@
 @extends('layout')
+@section('pageTitle', 'Checkout')
+
 @section('content')
 <div class="container">
     <div class="py-5 text-center">

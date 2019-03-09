@@ -5,10 +5,14 @@
     </ol>
     <div class="carousel-inner" role="listbox">
         <div class="carousel-item active">
-            <img class="d-block img-fluid" src="/img/slider-1.jpg" alt="First slide">
+            <a href="/apple-airpods">
+                <img class="d-block img-fluid" src="/img/slider-1.jpg" alt="Airpods">
+            </a>
         </div>
         <div class="carousel-item">
-            <img class="d-block img-fluid" src="/img/slider-2.jpg" alt="Second slide">
+            <a href="/sonos">
+                <img class="d-block img-fluid" src="/img/slider-2.jpg" alt="Sonos">
+            </a>
         </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
