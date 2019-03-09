@@ -57,11 +57,15 @@
                             </tr>
                             <tr>
                                 <th scope="row">Original URL</th>
-                                <td>{{ $product->originalUrl }}</td>
+                                <td>
+                                    <a href="{{ $product->originalUrl }}">{{ $product->originalUrl }}</a>
+                                </td>
                             </tr>
                             <tr>
                                 <th scope="row">Clean URL</th>
-                                <td>{{ $product->url }}</td>
+                                <td>
+                                    <a href="{{ $product->url }}">{{ $product->url }}</a>
+                                </td>
                             </tr>
                             @foreach($product->categories as $category)
                                 <tr>
