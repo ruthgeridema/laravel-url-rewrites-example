@@ -3,7 +3,6 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Http\Controllers\ProductController;
 use RuthgerIdema\UrlRewrite\Facades\UrlRewrite;
 use RuthgerIdema\UrlRewrite\Traits\HasUrlRewrite;
 
