@@ -2,9 +2,9 @@
 
 namespace App\Observers;
 
-use App\Http\Controllers\ProductController;
 use App\Product;
 use Illuminate\Support\Str;
+use App\Http\Controllers\ProductController;
 use RuthgerIdema\UrlRewrite\Facades\UrlRewrite;
 
 class ProductObserver

@@ -2,8 +2,8 @@
 
 namespace App;
 
-use App\Http\Controllers\ProductController;
 use Illuminate\Database\Eloquent\Model;
+use App\Http\Controllers\ProductController;
 use RuthgerIdema\UrlRewrite\Facades\UrlRewrite;
 
 class Product extends Model

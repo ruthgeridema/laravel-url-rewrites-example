@@ -7,10 +7,10 @@ use App\Product;
 class ProductController extends Controller
 {
     /** @var string */
-    public const DEFAULT_ROUTE = "product";
+    public const DEFAULT_ROUTE = 'product';
 
     /** @var array */
-    public const DEFAULT_ATTRIBUTES = ["id"];
+    public const DEFAULT_ATTRIBUTES = ['id'];
 
     /** @var string */
     public const DEFAULT_SLUG = 'name';
@@ -19,7 +19,7 @@ class ProductController extends Controller
     {
         return view('catalog.product')->with(
             [
-                'product' => Product::with('categories')->find($id)
+                'product' => Product::with('categories')->find($id),
             ]
         );
     }

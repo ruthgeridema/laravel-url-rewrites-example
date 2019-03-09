@@ -2,8 +2,8 @@
 
 namespace App;
 
-use App\Http\Controllers\CategoryController;
 use Illuminate\Database\Eloquent\Model;
+use App\Http\Controllers\CategoryController;
 use RuthgerIdema\UrlRewrite\Facades\UrlRewrite;
 
 class Category extends Model

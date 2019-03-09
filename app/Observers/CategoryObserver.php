@@ -3,8 +3,8 @@
 namespace App\Observers;
 
 use App\Category;
-use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Str;
+use App\Http\Controllers\CategoryController;
 use RuthgerIdema\UrlRewrite\Facades\UrlRewrite;
 
 class CategoryObserver
