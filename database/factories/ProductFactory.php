@@ -7,5 +7,6 @@ $factory->define(App\Product::class, function (Faker $faker) {
         'name' => $faker->name,
         'description' => $faker->realText(250),
         'image' => $faker->imageUrl(242, 300, 'cats'),
+        'price' => $faker->randomFloat(2, 10,100),
     ];
 });

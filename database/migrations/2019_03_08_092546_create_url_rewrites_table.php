@@ -21,7 +21,7 @@ class CreateUrlRewritesTable extends Migration
             $table->string('type')->nullable();
             $table->json('type_attributes')->nullable();
             $table->string('request_path');
-            $table->string('target_path');
+            $table->string('target_path')->nullable();
             $table->smallInteger('redirect_type')->default(0);
             $table->text('description')->nullable();
             $table->timestamps();

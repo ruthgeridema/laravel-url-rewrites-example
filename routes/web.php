@@ -12,8 +12,14 @@
 */
 
 Route::get('/', function () {
-    return view('catalog.homepage');
+    return view('cms.homepage.index');
 })->name('home');
+
+Route::get('/checkout', function () {
+    return view('checkout.onepage');
+})->name('checkout');
+
+
 Route::get('product/{id}', 'ProductController')->name('product');
 Route::get('category/{id}', 'CategoryController')->name('category');
 Route::rewrites();

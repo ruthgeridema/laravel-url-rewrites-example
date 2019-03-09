@@ -5,31 +5,19 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\Http\Controllers\ProductController;
 use RuthgerIdema\UrlRewrite\Facades\UrlRewrite;
+use RuthgerIdema\UrlRewrite\Traits\HasUrlRewrite;
 
 class Product extends Model
 {
+    use HasUrlRewrite;
+
+    public $urlRewriteType = 'product';
+
     protected $appends = ['url'];
 
-    public function getUrlAttribute(): string
+    public function getOriginalUrlAttribute()
     {
-        if (! $urlRewrite = UrlRewrite::getByTypeAndAttributes(
-            ProductController::DEFAULT_ROUTE, $this->getAttributesArrayFromProduct())
-        ) {
-            return '';
-        }
-
-        return route('url.rewrite', $urlRewrite->request_path, false);
-    }
-
-    protected function getAttributesArrayFromProduct(): array
-    {
-        $mapped = [];
-
-        foreach (ProductController::DEFAULT_ATTRIBUTES as $attribute) {
-            $mapped[$attribute] = $this->getAttribute($attribute);
-        }
-
-        return $mapped;
+        return UrlRewrite::getByRequestPath(request()->path())->target_path;
     }
 
     public function categories(): \Illuminate\Database\Eloquent\Relations\BelongsToMany

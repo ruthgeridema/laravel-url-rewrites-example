@@ -4,7 +4,6 @@ namespace App\Observers;
 
 use App\Category;
 use Illuminate\Support\Str;
-use App\Http\Controllers\CategoryController;
 use RuthgerIdema\UrlRewrite\Facades\UrlRewrite;
 
 class CategoryObserver
@@ -12,10 +11,10 @@ class CategoryObserver
     public function created(Category $category): void
     {
         UrlRewrite::create(
-            Str::slug($category->{CategoryController::DEFAULT_SLUG}),
+            Str::slug($category->{config("url-rewrite.types.$category->urlRewriteType.create-slug-from")}),
             null,
-            CategoryController::DEFAULT_ROUTE,
-            $this->getAttributesArrayFromCategory($category),
+            config("url-rewrite.types.$category->urlRewriteType.route"),
+            $category->getUrlRewriteAttributesArray(),
             0,
             true
         );
@@ -23,32 +22,11 @@ class CategoryObserver
 
     public function updated(Category $category): void
     {
-        $urlRewrite = $this->getCategoryUrlRewrite($category);
-        UrlRewrite::regenerateRoute($urlRewrite);
+        UrlRewrite::regenerateRoute($category->getUrlRewrite());
     }
 
     public function deleted(Category $category): void
     {
-        $urlRewrite = $this->getCategoryUrlRewrite($category);
-        UrlRewrite::delete($urlRewrite->id);
-    }
-
-    protected function getCategoryUrlRewrite(Category $category)
-    {
-        return UrlRewrite::getByTypeAndAttributes(
-            CategoryController::DEFAULT_ROUTE,
-            $this->getAttributesArrayFromCategory($category)
-        );
-    }
-
-    protected function getAttributesArrayFromCategory(Category $category): array
-    {
-        $mapped = [];
-
-        foreach (CategoryController::DEFAULT_ATTRIBUTES as $attribute) {
-            $mapped[$attribute] = $category->{$attribute};
-        }
-
-        return $mapped;
+        UrlRewrite::delete($category->getUrlRewrite()->id);
     }
 }

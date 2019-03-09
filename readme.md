@@ -1,7 +1,19 @@
-```
-docker-compose exec db bash
-```
+#Laravel URL rewrites example
 
 ```
-mysql -u root -p
+git clone git@github.com:ruthgeridema/laravel-url-rewrites-example.git
+```
+
+
+## Docker
+```
+chmod u+x setup.sh
+./setup.sh
+```
+Or manually
+```
+docker-compose up -d
+docker-compose exec app composer install
+docker-compose exec app php artisan migrate
+docker-compose exec app php artisan db:seed --class=CatalogSeeder
 ```

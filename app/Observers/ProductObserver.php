@@ -12,10 +12,10 @@ class ProductObserver
     public function created(Product $product): void
     {
         UrlRewrite::create(
-            Str::slug($product->{ProductController::DEFAULT_SLUG}),
+            Str::slug($product->{config("url-rewrite.types.$product->urlRewriteType.create-slug-from")}),
             null,
-            ProductController::DEFAULT_ROUTE,
-            $this->getAttributesArrayFromProduct($product),
+            config("url-rewrite.types.$product->urlRewriteType.route"),
+            $product->getUrlRewriteAttributesArray(),
             0,
             true
         );
@@ -23,32 +23,11 @@ class ProductObserver
 
     public function updated(Product $product): void
     {
-        $urlRewrite = $this->getProductUrlRewrite($product);
-        UrlRewrite::regenerateRoute($urlRewrite);
+        UrlRewrite::regenerateRoute($product->getUrlRewrite());
     }
 
     public function deleted(Product $product): void
     {
-        $urlRewrite = $this->getProductUrlRewrite($product);
-        UrlRewrite::delete($urlRewrite->id);
-    }
-
-    protected function getProductUrlRewrite(Product $product)
-    {
-        return UrlRewrite::getByTypeAndAttributes(
-            ProductController::DEFAULT_ROUTE,
-            $this->getAttributesArrayFromProduct($product)
-        );
-    }
-
-    protected function getAttributesArrayFromProduct(Product $product): array
-    {
-        $mapped = [];
-
-        foreach (ProductController::DEFAULT_ATTRIBUTES as $attribute) {
-            $mapped[$attribute] = $product->{$attribute};
-        }
-
-        return $mapped;
+        UrlRewrite::delete($product->getUrlRewrite()->id);
     }
 }

@@ -9,9 +9,13 @@ return [
     'types' => [
         'product' => [
             'route' => 'product',
-        ], /*,
+            'attributes' => ['id'],
+            'create-slug-from' => 'name',
+        ],
         'category' => [
-            'route' => 'category'
-        ]*/
+            'route' => 'category',
+            'attributes' => ['id'],
+            'create-slug-from' => 'name'
+        ]
     ],
 ];
