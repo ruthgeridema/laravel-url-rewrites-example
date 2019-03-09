@@ -3,12 +3,14 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Scout\Searchable;
 use RuthgerIdema\UrlRewrite\Facades\UrlRewrite;
 use RuthgerIdema\UrlRewrite\Traits\HasUrlRewrite;
 
+
 class Product extends Model
 {
-    use HasUrlRewrite;
+    use HasUrlRewrite, Searchable;
 
     public $urlRewriteType = 'product';
 
@@ -33,5 +35,10 @@ class Product extends Model
             'product_id',
             'category_id'
         );
+    }
+
+    public function searchableAs()
+    {
+        return 'products_index_' . env('MIX_ALGOLIA_APPEND', 'default');
     }
 }

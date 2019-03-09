@@ -3,12 +3,13 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Scout\Searchable;
 use RuthgerIdema\UrlRewrite\Facades\UrlRewrite;
 use RuthgerIdema\UrlRewrite\Traits\HasUrlRewrite;
 
 class Category extends Model
 {
-    use HasUrlRewrite;
+    use HasUrlRewrite, Searchable;
 
     public $urlRewriteType = 'category';
 
@@ -33,5 +34,10 @@ class Category extends Model
             'category_id',
             'product_id'
         );
+    }
+
+    public function searchableAs()
+    {
+        return 'categories_index_' . env('MIX_ALGOLIA_APPEND', 'default');
     }
 }

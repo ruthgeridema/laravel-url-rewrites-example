@@ -38,6 +38,12 @@ class CatalogSeeder extends Seeder
                 'image' => '/img/philips-hue-starter-pack-white-with-dimmer-switch.jpg',
                 'description' => 'Discover the possibilities of smart lighting with the Philips Hue White Starter Pack with Dimmer.',
             ],
+            1 => [
+                'name' => 'Philips 65OLED803 - Ambilight',
+                'price' => '89.95',
+                'image' => '/img/philips-tv.jpeg',
+                'description' => 'With the Philips 65OLED803 you can view sharp images with a lifelike contrast.',
+            ],
         ],
         'Sonos' => [
             0 => [
@@ -45,6 +51,18 @@ class CatalogSeeder extends Seeder
                 'price' => '229.95',
                 'image' => '/img/sonos.jpeg',
                 'description' => 'Listen to your favorite music wirelessly with the SONOS One.',
+            ],
+            1 => [
+                'name' => 'SONOS Sub Black',
+                'price' => '691.95',
+                'image' => '/img/sonos-sub.jpeg',
+                'description' => 'With the Sonos Sub, the bass of your Sonos system sounds extra deep.',
+            ],
+            2 => [
+                'name' => 'Sonos Play:5 Wit',
+                'price' => '691.95',
+                'image' => '/img/sonos-play5.jpeg',
+                'description' => 'Are you looking for a powerful wireless speaker? Then the Sonos Play: 5 is the speaker for you',
             ],
         ],
     ];

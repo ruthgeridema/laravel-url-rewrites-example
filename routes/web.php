@@ -21,4 +21,5 @@ Route::get('/checkout', function () {
 
 Route::get('product/{id}', 'ProductController')->name('product');
 Route::get('category/{id}', 'CategoryController')->name('category');
+
 Route::rewrites();

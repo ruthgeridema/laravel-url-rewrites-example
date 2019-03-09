@@ -29,22 +29,22 @@
                         <h1 class="card-title">Info</h1>
                         <table class="table table-striped">
                             <tbody>
-                            <tr>
-                                <th scope="row">Category ID</th>
-                                <td>{{ $category->id }}</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Original URL</th>
-                                <td>
-                                    <a href="{{ $category->originalUrl }}">{{ $category->originalUrl }}</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Clean URL</th>
-                                <td>
-                                    <a href="{{ $category->url }}">{{ $category->url }}</a>
-                                </td>
-                            </tr>
+                                <tr>
+                                    <th scope="row">Category ID</th>
+                                    <td>{{ $category->id }}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Original URL</th>
+                                    <td>
+                                        <a href="{{ $category->originalUrl }}">{{ $category->originalUrl }}</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Clean URL</th>
+                                    <td>
+                                        <a href="{{ $category->url }}">{{ $category->url }}</a>
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
