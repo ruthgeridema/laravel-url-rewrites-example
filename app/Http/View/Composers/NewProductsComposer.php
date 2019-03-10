@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Http\View\Composers;
 
 use App\Product;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\View\View;
 
 class NewProductsComposer
@@ -22,7 +23,7 @@ class NewProductsComposer
         $view->with('new', $this->getNewProducts());
     }
 
-    protected function getNewProducts(): Product
+    protected function getNewProducts(): Collection
     {
         return $this->product->orderBy('created_at', 'desc')->get()->take(6);
     }
