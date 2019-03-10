@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace App\Http\View\Composers;
 
 use App\Product;
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\View\View;
+use Illuminate\Database\Eloquent\Collection;
 
 class NewProductsComposer
 {
