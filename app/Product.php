@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Laravel\Scout\Searchable;
 use Illuminate\Database\Eloquent\Model;
 use RuthgerIdema\UrlRewrite\Facades\UrlRewrite;
 use RuthgerIdema\UrlRewrite\Traits\HasUrlRewrite;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Product extends Model
 {
