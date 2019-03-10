@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\View\Composers;
 
 use App\Category;
@@ -7,6 +9,7 @@ use Illuminate\View\View;
 
 class HeaderComposer
 {
+    /** @var Category */
     protected $category;
 
     public function __construct(Category $category)
@@ -16,6 +19,6 @@ class HeaderComposer
 
     public function compose(View $view)
     {
-        $view->with('categories', $this->category->all());
+        $view->with('categories', $this->category::all());
     }
 }

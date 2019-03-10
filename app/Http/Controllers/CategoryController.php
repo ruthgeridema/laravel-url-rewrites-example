@@ -6,7 +6,7 @@ use App\Category;
 
 class CategoryController extends Controller
 {
-    public function __invoke($id)
+    public function __invoke(int $id)
     {
         return view('catalog.category')->with(
             [

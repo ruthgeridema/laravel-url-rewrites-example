@@ -1,7 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App;
 
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Laravel\Scout\Searchable;
 use Illuminate\Database\Eloquent\Model;
 use RuthgerIdema\UrlRewrite\Facades\UrlRewrite;
@@ -11,11 +14,13 @@ class Product extends Model
 {
     use HasUrlRewrite, Searchable;
 
+    /** @var string */
     public $urlRewriteType = 'product';
 
+    /** @var array */
     protected $appends = ['url'];
 
-    public function getOriginalUrlAttribute()
+    public function getOriginalUrlAttribute(): string
     {
         $urlRewrite = UrlRewrite::getByRequestPath(request()->path());
 
@@ -26,7 +31,7 @@ class Product extends Model
         return $urlRewrite->target_path;
     }
 
-    public function categories(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    public function categories(): BelongsToMany
     {
         return $this->belongsToMany(
             Category::class,
@@ -36,7 +41,7 @@ class Product extends Model
         );
     }
 
-    public function searchableAs()
+    public function searchableAs(): string
     {
         return 'products_index_'.env('MIX_ALGOLIA_APPEND', 'default');
     }

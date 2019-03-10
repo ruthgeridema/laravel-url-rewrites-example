@@ -6,7 +6,7 @@ use App\Product;
 
 class ProductController extends Controller
 {
-    public function __invoke($id)
+    public function __invoke(int $id)
     {
         return view('catalog.product')->with(
             [

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\View\Composers;
 
 use App\Product;
@@ -7,6 +9,7 @@ use Illuminate\View\View;
 
 class NewProductsComposer
 {
+    /** @var Product */
     protected $product;
 
     public function __construct(Product $product)
@@ -19,7 +22,7 @@ class NewProductsComposer
         $view->with('new', $this->getNewProducts());
     }
 
-    protected function getNewProducts()
+    protected function getNewProducts(): Product
     {
         return $this->product->orderBy('created_at', 'desc')->get()->take(6);
     }
