@@ -15,7 +15,7 @@
         "laravel/scout": "^7.1",
         "laravel/tinker": "^1.0",
         "predis/predis": "^1.1",
-        "ruthgeridema/laravel-url-rewrites": "dev-master"
+        "ruthgeridema/laravel-url-rewrites": "1.0.0"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
