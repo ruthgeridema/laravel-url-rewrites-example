@@ -1,6 +1,10 @@
 # Laravel URL rewrites example
 
 You can view a live demo at [https://laravel-url-rewrites.ide.ma/](https://laravel-url-rewrites.ide.ma/)
+  
+## Requirements
+
+This repository requires PHP 7.2 or higher and a database that supports json fields and functions such as MySQL 5.7 or higher.
 
 ## Installation
 
