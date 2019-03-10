@@ -33,3 +33,16 @@ docker-compose exec app composer install
 docker-compose exec app php artisan migrate
 docker-compose exec app php artisan db:seed --class=CatalogSeeder
 ```
+
+## Security
+
+If you discover any security related issues, please email ruthger.idema@gmail.com instead of using the issue tracker.
+
+## Credits
+
+- [Ruthger Idema](https://github.com/ruthgeridema)
+- [All Contributors](../../contributors)
+
+## License
+
+The MIT License (MIT). 
